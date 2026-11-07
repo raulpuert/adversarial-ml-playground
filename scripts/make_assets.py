@@ -143,18 +143,26 @@ def make_grids(clean_model, at_model, test_loader, device):
 
 def make_confidence_curve(clean_model, test_loader, device):
     logger.info("→ Curva de confianza vs eps")
-    # Buscamos una imagen bien clasificada con alta confianza
+    # Buscamos una imagen bien clasificada con alta confianza a la que
+    # además FGSM(0.15) SÍ engaña: la curva debe mostrar el volteo, no solo
+    # la degradación de confianza.
     for images, labels in test_loader:
         images, labels = images.to(device), labels.to(device)
         with torch.no_grad():
             probs = clean_model(images).softmax(1)
             conf, preds = probs.max(1)
             ok = preds == labels
-        if ok.any():
-            high = ok & (conf > 0.95)
-            idx = int(torch.where(high)[0][0]) if high.any() else int(torch.where(ok)[0][0])
-            image, label = images[idx], int(labels[idx])
-            break
+        if not ok.any():
+            continue
+        result = FGSM(clean_model, eps=0.15)(images[ok], labels[ok])
+        flipped = result.success
+        if not flipped.any():
+            continue
+        idx_candidates = torch.where(ok)[0][flipped]
+        conf_candidates = conf[idx_candidates]
+        idx = int(idx_candidates[int(conf_candidates.argmax())])
+        image, label = images[idx], int(labels[idx])
+        break
     attack_factory = lambda eps: FGSM(clean_model, eps=eps)  # noqa: E731
     plot_confidence_vs_eps(
         clean_model,

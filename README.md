@@ -8,7 +8,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Tests](https://img.shields.io/badge/tests-36%20passing-brightgreen)](tests/)
+[![Tests](https://img.shields.io/badge/tests-40%20passing-brightgreen)](tests/)
 
 Una imagen que una CNN clasifica como **4 con 99% de confianza** se
 convierte en un **8** cambiando píxeles que **ni ves**. Este repo te enseña
