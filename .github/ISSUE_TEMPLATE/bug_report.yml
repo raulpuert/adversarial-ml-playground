@@ -1,0 +1,40 @@
+name: 🐞 Reporte de bug
+description: Reporta un fallo en un ataque, defensa o utilidad del paquete
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por reportar! Para que podamos reproducirlo rápido,
+        incluye un ejemplo mínimo ejecutable y tu entorno.
+  - type: textarea
+    id: repro
+    attributes:
+      label: Ejemplo mínimo reproducible
+      description: |
+        Código + comportamiento esperado vs. obtenido. Si el fallo afecta a
+        un ataque, indica los parámetros usados (eps, steps, norm...).
+      placeholder: |
+        ```python
+        from adversarial_playground.attacks import FGSM
+        # ... código mínimo ...
+        ```
+    validations:
+      required: true
+  - type: textarea
+    id: entorno
+    attributes:
+      label: Entorno
+      description: SO, versión de Python y de torch
+      placeholder: |
+        Windows 11, Python 3.12.10, torch 2.15.0+cpu
+        (python -c "import torch; print(torch.__version__)")
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Contexto adicional
+      description: Traza de error completa, capturas, o cualquier cosa relevante.
+    validations:
+      required: false

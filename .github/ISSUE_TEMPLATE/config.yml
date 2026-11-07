@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Documentación y teoría
+    url: https://github.com/raulpuert/adversarial-ml-playground/tree/main/docs
+    about: Antes de abrir un issue, consulta los docs de fundamentos, FGSM, PGD y defensas.
