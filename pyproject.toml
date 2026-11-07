@@ -53,8 +53,8 @@ app = ["gradio>=4.0"]
 certify = ["scipy>=1.10"]
 
 [project.urls]
-Homepage = "https://github.com/raulp/adversarial-ml-playground"
-Documentation = "https://github.com/raulp/adversarial-ml-playground/tree/main/docs"
+Homepage = "https://github.com/raulpuert/adversarial-ml-playground"
+Documentation = "https://github.com/raulpuert/adversarial-ml-playground/tree/main/docs"
 
 [project.scripts]
 advml = "adversarial_playground.cli:main"

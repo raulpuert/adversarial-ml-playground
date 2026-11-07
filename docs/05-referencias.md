@@ -51,6 +51,6 @@
   author  = {Raúl},
   title   = {adversarial-ml-playground: ataques y defensas adversariales implementados desde cero en PyTorch},
   year    = {2026},
-  url     = {https://github.com/raulp/adversarial-ml-playground},
+  url     = {https://github.com/raulpuert/adversarial-ml-playground},
 }
 ```

@@ -4,7 +4,7 @@
 
 **Ataques y defensas de Machine Learning Adversarial, implementados desde cero en PyTorch, en español.**
 
-[![CI](https://github.com/raulp/adversarial-ml-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/raulp/adversarial-ml-playground/actions/workflows/ci.yml)
+[![CI](https://github.com/raulpuert/adversarial-ml-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/raulpuert/adversarial-ml-playground/actions/workflows/ci.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -159,7 +159,7 @@ smoothing* con garantías certificables (notebook 04).
 ## Inicio rápido
 
 ```bash
-git clone https://github.com/raulp/adversarial-ml-playground
+git clone https://github.com/raulpuert/adversarial-ml-playground
 cd adversarial-ml-playground
 python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\activate
 pip install -e ".[dev,app]"
@@ -298,7 +298,7 @@ C&W minimiza la norma L2.
 
 ## Créditos y contacto
 
-Proyecto educativo hecho con cariño por [Raúl](https://github.com/raulp).
+Proyecto educativo hecho con cariño por [Raúl](https://github.com/raulpuert).
 Implementaciones propias a partir de los papers originales (referencias en
 [docs/05-referencias.md](docs/05-referencias.md)); si necesitas una librería
 de producción, usa [torchattacks](https://github.com/Harry24k/adversarial-attacks-pytorch),

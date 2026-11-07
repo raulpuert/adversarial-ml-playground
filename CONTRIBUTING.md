@@ -39,7 +39,7 @@ hay. Guía rápida:
 ## Entorno
 
 ```bash
-git clone https://github.com/raulp/adversarial-ml-playground
+git clone https://github.com/raulpuert/adversarial-ml-playground
 cd adversarial-ml-playground
 python -m venv .venv && source .venv/bin/activate   # o .venv\Scripts\activate en Windows
 pip install -e ".[dev,app]"
