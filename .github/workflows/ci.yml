@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Tests (${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Instalar PyTorch (CPU, más ligero en CI)
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Instalar paquete y dependencias de test
+        run: pip install -e ".[dev]"
+
+      - name: Lint con ruff
+        run: ruff check adversarial_playground scripts tests
+
+      - name: Tests unitarios (sin los marcados como slow)
+        run: pytest -m "not slow" --cov=adversarial_playground --cov-report=term-missing
+
+  build-notebooks:
+    name: Notebooks ejecutables (sintaxis)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar JSON de los notebooks
+        run: |
+          python - <<'EOF'
+          import json
+          from pathlib import Path
+          for nb in Path("notebooks").glob("*.ipynb"):
+              json.loads(nb.read_text(encoding="utf-8"))
+              print(f"OK: {nb}")
+          EOF

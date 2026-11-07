@@ -1,0 +1,8 @@
+defensa,ataque,n,clean_acc,robust_acc,attack_success
+sin_defensa,pgd_eps0.3,1000,0.99,0.0,1.0
+bitdepth_3bits,pgd_eps0.3,1000,0.988,0.0,1.0
+bitdepth_5bits,pgd_eps0.3,1000,0.989,0.0,1.0
+jpeg_q75,pgd_eps0.3,1000,0.99,0.0,1.0
+jpeg_q90,pgd_eps0.3,1000,0.988,0.0,1.0
+ruido_sigma0.1,pgd_eps0.3,1000,0.988,0.0,1.0
+tvm,pgd_eps0.3,1000,0.99,0.0,1.0

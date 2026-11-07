@@ -1,0 +1,7 @@
+# Normalizar saltos de línea: LF en el repo, LF también en checkout para
+# scripts y código (evita sorpresas en CI), binarios intactos.
+* text=auto eol=lf
+*.pt binary
+*.png binary
+*.gif binary
+*.ipynb text eol=lf

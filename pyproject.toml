@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adversarial-ml-playground"
+version = "1.0.0"
+description = "Playground educativo de Machine Learning Adversarial: ataques (FGSM, PGD, DeepFool, C&W) y defensas (entrenamiento adversarial, smoothing) implementados desde cero en PyTorch."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Raúl" }]
+keywords = [
+    "adversarial-ml",
+    "machine-learning",
+    "deep-learning",
+    "pytorch",
+    "security",
+    "fgsm",
+    "pgd",
+    "deepfool",
+    "adversarial-training",
+    "randomized-smoothing",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Security",
+    "Natural Language :: Spanish",
+]
+dependencies = [
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "pillow>=10.0",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+# Herramientas de desarrollo: tests, lint y formato
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.4", "black>=24.0"]
+# Demo interactiva con Gradio
+app = ["gradio>=4.0"]
+# Radio de certificación de Randomized Smoothing (Clopper-Pearson)
+certify = ["scipy>=1.10"]
+
+[project.urls]
+Homepage = "https://github.com/raulp/adversarial-ml-playground"
+Documentation = "https://github.com/raulp/adversarial-ml-playground/tree/main/docs"
+
+[project.scripts]
+advml = "adversarial_playground.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["adversarial_playground*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: tests que requieren datos reales descargados (deseleccionar con -m 'not slow')",
+]
+addopts = "-ra"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B"]
+ignore = ["N999"]

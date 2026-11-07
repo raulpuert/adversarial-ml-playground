@@ -1,0 +1,40 @@
+# Datos descargados (MNIST, CIFAR-10) - se regeneran con torchvision
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+*.egg
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Cachés de herramientas
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Salidas locales del usuario (las de assets/ y results/ del repo SÍ se versionan)
+outputs/
+*.log
+
+# Modelos grandes que NO deben subirse por accidente
+# (los checkpoints oficiales van en checkpoints/ y pesan < 15 MB cada uno)
+checkpoints/*.tmp
+*.pt.bak
