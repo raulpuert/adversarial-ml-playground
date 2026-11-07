@@ -1,0 +1,26 @@
+name: ✨ Petición de mejora
+description: Propón un nuevo ataque, defensa, dataset o mejora educativa
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Antes de proponer, revisa los issues abiertos y el roadmap del README —
+        puede que ya esté planificado (o incluso que exista un issue con
+        `good first issue` esperando a alguien).
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Propuesta
+      description: ¿Qué te gustaría añadir y por qué? Si es un ataque/defensa
+        nuevo, enlaza el paper (arXiv) y di qué norma usa (L0/L2/L∞).
+    validations:
+      required: true
+  - type: textarea
+    id: alternativa
+    attributes:
+      label: ¿Resuelve tu caso alguna herramienta existente?
+      description: Si torchattacks/Foolbox/ART ya lo cubren, dinos qué les falta
+        para tu caso de uso educativo.
+    validations:
+      required: false
