@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+title: "adversarial-ml-playground: adversarial attacks and defenses from scratch in PyTorch"
+authors:
+  - given-names: "Raul"
+    alias: raulpuert
+    website: "https://github.com/raulpuert"
+version: 1.0.0
+date-released: "2026-11-07"
+license: MIT
+repository-code: "https://github.com/raulpuert/adversarial-ml-playground"
+keywords:
+  - adversarial-machine-learning
+  - pytorch
+  - fgsm
+  - pgd
+  - deepfool
+  - carlini-wagner
+  - adversarial-training
+  - randomized-smoothing
+  - education
+abstract: "An educational playground implementing five adversarial attacks (FGSM, BIM, PGD, DeepFool, Carlini-Wagner) and three defenses (adversarial training, input transformations, randomized smoothing with certified L2 radii) from scratch in PyTorch, with mathematical invariants under test, trained checkpoints and fully reproducible measured results. Documentation and notebooks are in Spanish."
